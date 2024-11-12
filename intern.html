@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .job-listings {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .job-box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            height: 380px; /* Set height to make the box square */
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .job-box:hover {
+            transform: scale(1.05);
+        }
+
+        /* Label Styles */
+        .hourly-label, .part-time-label {
+            position: absolute;
+            top: 25px;
+            left: 30px;
+            padding: 5px 15px; /* Increased padding for oval shape */
+            border-radius: 50px; /* Makes the label oval */
+            font-weight: bold;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .hourly-label {
+            background-color: #4CAF50; /* Green color */
+        }
+
+        .part-time-label {
+            background-color: #FFA500; /* Orange color */
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+            margin-top: 70px; /* Increased margin-top to move the title further down */
+        }
+
+        /* Company name styling with icon */
+        .company-name {
+            color: #007BFF; /* Blue color */
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0px; /* Added margin-top to move company name down */
+        }
+
+        .company-name img {
+            width: 20px; /* Small icon size */
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .skills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        /* Skill box with white background */
+        .skill-box {
+            background-color:  #fff; /* White background */
+            color: #000;
+            padding: 5px 25px; /* Increased padding for oval shape */
+            border-radius: 50px; /* Makes the skill boxes oval */
+            font-size: 16px;
+            border: 1px solid #ddd; /* Lighter gray border */
+
+        }
+
+        /* Additional skill button styling for +4 and +2 buttons */
+        .additional-skill {
+            background-color: #007BFF; /* Blue color */
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Rate styling to display in black */
+        .rate {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000; /* Black color for the rate */
+        }
+
+        .view-job {
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            display: inline-block;
+            position: relative;
+        }
+
+        /* Adding the small line above the View Job button */
+        .view-job::before {
+            content: '';
+            position: absolute;
+            top: -7px;
+            left: 50%; /* Centers the line */
+            width: 30%; /* Set to 100% of the button's width */
+            height: 1px;
+            background-color: #000;
+            border-radius: 2px;
+            transform: translateX(-50%); /* Centers the line by shifting it by half its width */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="job-listings">
+        <!-- UI/UX Designer Job Box -->
+        <div class="job-box">
+            <span class="hourly-label">hourly</span>
+            <h2>UI/UX Designer</h2>
+            <p class="company-name">
+                🏩Epic Coders
+            </p>
+            <!-- Skills section moved above the job description -->
+            <div class="skills">
+                <span class="skill-box">UI</span>
+                <span class="skill-box">UX</span>
+                <span class="skill-box">photoshop</span>
+                <span class="additional-skill">+4</span> <!-- Added +4 button -->
+            </div>
+            <p>We are looking for an experienced UI and UX designer to work on our new projects...</p>
+            <p class="rate">$55 / hr</p> <!-- Rate now displayed in black -->
+            <a href="#" class="view-job">VIEW JOB</a>
+        </div>
+
+        <!-- Branding Expert Job Box with Part-time Label -->
+        <div class="job-box">
+            <span class="part-time-label">part-time</span>
+            <h2>Branding Expert</h2>
+            <p class="company-name">
+                🏩Hubstaff
+            </p>
+            <!-- Skills section moved above the job description -->
+            <div class="skills">
+                <span class="skill-box">PHP</span>
+                <span class="skill-box">android</span>
+                <span class="skill-box">iOS</span>
+                <span class="additional-skill">+2</span> <!-- Added +2 button -->
+            </div>
+            <p>Looking for an experienced person to help us with rebranding our business. We are interested in a...</p>
+            <p class="rate">$32 / hr</p> <!-- Rate now displayed in black -->
+            <a href="#" class="view-job">VIEW JOB</a>
+        </div>
+    </div>
+
+</body>
+</html>
